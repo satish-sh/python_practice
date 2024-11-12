@@ -106,19 +106,20 @@ print(checked_password) """
 
 # ------------>    PROGRAM - 05   <------------------------
 
-class DivisibleBySeven:
-    def __init__(self, n):
-        self.n = n
+# Define a class with a generator which can iterate the numbers, 
+# which are divisible by 7, between a given range 0 and n.
+
+class Divisible_By_Seven:
+    def __init__(self, number):
+        self.number = number
     
-    def divisible_by_seven(self):
-        for num in range(0, self.n + 1):
-            if num % 7 == 0:
-                return num
+    def generate_7_divisible(self):
+        for i in range(1, self.number+1):
+            if i%7 == 0:
+                yield i
 
-# Example usage
-n = 50
-div7 = DivisibleBySeven(n)
-
-# Iterate over numbers divisible by 7
-for number in div7.divisible_by_seven():
+div_7 = Divisible_By_Seven(51)
+for number in div_7.generate_7_divisible():
     print(number)
+
+
